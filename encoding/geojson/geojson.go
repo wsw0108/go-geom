@@ -49,7 +49,7 @@ type Geometry struct {
 
 // A Feature is a GeoJSON Feature.
 type Feature struct {
-	ID         string
+	ID         interface{}
 	BBox       *geom.Bounds
 	Geometry   geom.T
 	Properties map[string]interface{}
@@ -57,7 +57,7 @@ type Feature struct {
 
 type geojsonFeature struct {
 	Type       string                 `json:"type"`
-	ID         string                 `json:"id,omitempty"`
+	ID         interface{}            `json:"id,omitempty"`
 	BBox       []float64              `json:"bbox,omitempty"`
 	Geometry   *Geometry              `json:"geometry"`
 	Properties map[string]interface{} `json:"properties"`
